@@ -18,9 +18,12 @@ import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+//Ali Albayrak - P304320
 @SuppressWarnings("ALL")
 public class MainActivity extends Activity {
 
+    //Defining textviews, layouts, Imageviews and some values
     TextView myTextView; // text view in the layout
     RelativeLayout myBackgroundLayout; // layout background
     private ImageView image;
@@ -36,7 +39,7 @@ public class MainActivity extends Activity {
     double totalValue;
     String Multi= "";
 
-
+    //On Create method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +47,14 @@ public class MainActivity extends Activity {
         setTitle("Resistor");
         view1 = (TextView) findViewById(R.id.View);
         RelativeLayout myBackgroundLayout;
-
+        //creating band image views to use images for spinners
         bandOne = (ImageView)findViewById(R.id.colorOne);
         bandTwo = (ImageView)findViewById(R.id.colorTwo);
         bandThree = (ImageView)findViewById(R.id.colorThree);
         tolerance = (ImageView)findViewById(R.id.Tolerance);
         resistorValue = (TextView) findViewById(R.id.resValue);
 
-
+        //spinners for resistor colors
         NumberPicker pickerOne = (NumberPicker) findViewById(R.id.bandOne);
         NumberPicker pickerTwo = (NumberPicker) findViewById(R.id.bandTwo);
         NumberPicker pickerThree = (NumberPicker) findViewById(R.id.bandThree);
@@ -68,7 +71,7 @@ public class MainActivity extends Activity {
 
 
 
-
+        // Sets the options for resistor color values
         pickerOne
                 .setDisplayedValues(new String[] { "Black", "Brown", "Red",
                         "Orange", "Yellow", "Green", "Blue", "Violet", "Grey",
@@ -84,6 +87,7 @@ public class MainActivity extends Activity {
         pickerTolerance
                 .setDisplayedValues(new String[] {"", "Gold", "Silver"});
 
+        //sets the image according to spinner value
         pickerOne
                 .setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                     @Override
@@ -260,17 +264,10 @@ public class MainActivity extends Activity {
                         calculator();
                     }
                 });
-
-
-
-
-
     }
 
 
-
-
-
+    //Menu section color options; changes color when selected
     public void changeScheme(int colorValue) {
         myBackgroundLayout = (RelativeLayout) findViewById(R.id.backgroundLayout);
         myTextView = (TextView) findViewById(R.id.View);
@@ -278,9 +275,7 @@ public class MainActivity extends Activity {
             case 0:
                 myBackgroundLayout.setBackgroundColor(getResources().getColor(
                         R.color.NightBG));
-
                 // night scheme
-
                 myTextView.setTextColor(getResources().getColor(R.color.NightTxt));
                 break;
             case 1:
@@ -328,6 +323,7 @@ public class MainActivity extends Activity {
         }
     } // end of changeTextSize method
 
+    //Creates Menu section
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -337,14 +333,9 @@ public class MainActivity extends Activity {
 
     }
 
+    //Sets menu options
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // call four (4) color scheme in the changeScheme method
-        // to handle the background and text color. Call three (3)
-        // text sizes from the changeTextSize method.
-
-
         Log.d("<<<TAG1>>>","<<<<After On Select>>>");
         int id = item.getItemId();
         switch (id) {
@@ -377,7 +368,7 @@ public class MainActivity extends Activity {
         }
     }
 
-
+    //Calculates the resistor value and sets text as its value.
     public void calculator(){
         totalValue = ((dig1*10)  + dig2) * dig3;
         view1.setText(String.format("%.1f",totalValue) + Multi + " OHMS   " + Integer.toString(tol) + " %");

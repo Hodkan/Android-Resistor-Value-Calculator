@@ -3,11 +3,11 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="text_size_sml">12sp</dimen>
+    <dimen name="text_size_sml">3sp</dimen>
 
-    <dimen name="text_size_med">18sp</dimen>
+    <dimen name="text_size_med">8sp</dimen>
 
-    <dimen name="text_size_lge">22sp</dimen>
+    <dimen name="text_size_lge">10sp</dimen>
 
     <dimen name="square">80sp</dimen>
 </resources>

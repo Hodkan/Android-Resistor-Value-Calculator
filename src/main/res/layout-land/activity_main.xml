@@ -12,6 +12,12 @@
 
 
 
+    <TextView
+        android:id="@+id/resValue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/res_value" />
+
 
 
     <TextView
@@ -19,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layoutSpinners"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="360dp"
 
         />
 
@@ -27,7 +33,7 @@
 
     <LinearLayout
         android:id="@+id/layoutImages"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_marginTop="30dp"
@@ -88,8 +94,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/layoutImages"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/resValue"
+        android:layout_marginLeft="350dp"
         android:orientation="horizontal" >
 
         <NumberPicker
